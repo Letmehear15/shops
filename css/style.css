@@ -108,9 +108,6 @@ header {
     border-top: 1px solid red;
     border-right: 1px solid red;
 }
-.main__item:nth-of-type(3n+0) {
-    margin-right: 0;
-}
 .main__item::before {
     content: '';
     position: absolute;
