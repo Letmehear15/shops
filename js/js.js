@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', function() {
-    const menuItems = document.querySelectorAll('.menu__item');
+    const menuItems = document.querySelectorAll('.toArray');
     const title = document.querySelector('.main__title');
     const burger = document.querySelector('.burger_menu');
     const menu = document.querySelector('.menu');
@@ -10,6 +10,8 @@ window.addEventListener('DOMContentLoaded', function() {
     const modalTitle = document.querySelector('.modal__title')
     const modalImg = document.querySelector('.modal__img img')
     const close = document.querySelector('.close')
+    const category = document.querySelectorAll('.category')
+    const catalog = document.querySelector('.catalog')
 
     burger.addEventListener('click', () => {
         burger.classList.toggle('active_burger');
@@ -29,11 +31,13 @@ window.addEventListener('DOMContentLoaded', function() {
     close.addEventListener('click', () => {
         modal.style.display = 'none'
     })
-    menuItems.forEach(el => {
+
+    menuItems.forEach((el, index) => {
         el.addEventListener('click', (e) => {
             clearClass();
             el.classList.add('active')
             title.textContent = el.textContent;
+            showCategory(index)
         })
     })
     function clearClass() {
@@ -41,4 +45,14 @@ window.addEventListener('DOMContentLoaded', function() {
             el.classList.remove("active")
         })
     }
+    function showCategory(index) {
+        category.forEach(el =>{
+            el.classList.add('hide')
+        })
+        category[index].classList.remove('hide')
+    }
+
+    catalog.addEventListener('click', () => {
+        category.forEach(el=>el.classList.remove('hide'))
+    })
 })

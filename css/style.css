@@ -4,6 +4,11 @@
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
 }
+
+.hide {
+    display: none !important;
+}
+
 .active {
     color: #34ABE0;
     border-left: 3px solid #34ABE0;
@@ -87,6 +92,12 @@ header {
     justify-content: space-between;
     flex-wrap: wrap;
 }
+.flex {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 .main__item {
     position: relative;
     display: flex;
@@ -159,6 +170,8 @@ header {
     font-weight: 300;
 }
 .rightSide img{
+    width: 150px;
+    height: 150px;
     position: absolute;
     right: 6px;
     top: 4px;
